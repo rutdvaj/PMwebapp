@@ -58,7 +58,32 @@ function DB2herosection() {
             <Image src={ddimg} alt="" />
           </div>
         </div>
-
+        <div className="tp-1-dropdown">
+          <div className="tester flex flex-col tp-1 w-[760px] h-[275px] bg-normaltask text-white  justify-between rounded-[32px] mt-10 items-start">
+            <div className=" flex flex-row items-start justify-around w-full mt-5">
+              <h1 className="text-[20px] font-normal"> Design Changes </h1>
+              <div className="img-1">
+                <Image src={msgimg} alt="" />
+              </div>
+              <div className="img-2">
+                <Image src={linkimg} alt="" />
+              </div>
+              <div className="img-3">
+                <Image src={galleryimg} alt="" />
+              </div>
+              <div className="img-4">
+                <Image src={ddimg} alt="" />
+              </div>
+            </div>
+            <div className="flex items-center w-full justify-center mb-5">
+              <Button className="button-test text-black bg-inputrr font--poppins text-[20px] font-regular p-8 rounded-[34px] text-center  hover:bg-redesigntask">
+                <Link href="https://github.com/users/rutdvaj/projects/7/views/1">
+                  Track Progress
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
         <div className="tp-1 w-[760px] h-[75px] bg-normaltask text-white flex justify-around rounded-[32px] mt-20 items-center ">
           <h1 className="text-[20px] font-normal"> Database Changes </h1>
           <div className="img-1">
