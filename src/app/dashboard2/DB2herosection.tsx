@@ -61,7 +61,7 @@ function DB2herosection() {
         <div className="tp-1-dropdown">
           <div className="tester flex flex-col tp-1 w-[760px] h-[275px] bg-normaltask text-white  justify-between rounded-[32px] mt-10 items-start">
             <div className=" flex flex-row items-start justify-around w-full mt-5">
-              <h1 className="text-[20px] font-normal"> Design Changes </h1>
+              <h1 className="text-[20px] font-normal"> Design Change</h1>
               <div className="img-1">
                 <Image src={msgimg} alt="" />
               </div>
