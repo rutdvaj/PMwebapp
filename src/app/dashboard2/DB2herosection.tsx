@@ -7,15 +7,21 @@ import msgimg from "../../../public/images/Vectormsg.png";
 import linkimg from "../../../public/images/Vectorlink.png";
 import galleryimg from "../../../public/images/Vectorimage.png";
 import ddimg from "../../../public/images/Vectordrop.png";
-import { ButtonDemo } from "../dashboard1/meeting";
+import DDUPIMG from "../../../public/images/Vectorvectorup.png";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { AlertDialogDemo } from "./testalert";
 
 function DB2herosection() {
   const [Active, SetActive] = useState<boolean>(false);
-  const toggleDropdown = () => {
+  const [comment, setComment] = useState<boolean>(false);
+  const handleDropdown = () => {
     SetActive(!Active);
   };
+  const handlePopUp = () => {
+    setComment(!comment);
+  };
+
   return (
     <div className="main h-screen w-[950px]">
       <div className="main-1 flex justify-between mt-56 mr-60 py-10 ">
@@ -45,8 +51,14 @@ function DB2herosection() {
       <div className="task-progress">
         <div className="tp-1 w-[760px] h-[75px] bg-normaltask text-white flex justify-around rounded-[32px] mt-10 items-center">
           <h1 className="text-[20px] font-normal"> Design Changes </h1>
-          <div className="img-1">
-            <Image src={msgimg} alt="" />
+          <div className="img-1 cursor-pointer">
+            {/* <Image src={msgimg} alt="" />
+            {comment && (
+              <div>
+                <Comment />
+              </div>
+            )} */}
+            <AlertDialogDemo />
           </div>
           <div className="img-2">
             <Image src={linkimg} alt="" />
@@ -54,36 +66,38 @@ function DB2herosection() {
           <div className="img-3">
             <Image src={galleryimg} alt="" />
           </div>
-          <div className="img-4">
+          <div className="img-4 cursor-pointer" onClick={handleDropdown}>
             <Image src={ddimg} alt="" />
           </div>
         </div>
-        <div className="tp-1-dropdown">
-          <div className="tester flex flex-col tp-1 w-[760px] h-[275px] bg-normaltask text-white  justify-between rounded-[32px] mt-10 items-start">
-            <div className=" flex flex-row items-start justify-around w-full mt-5">
-              <h1 className="text-[20px] font-normal"> Design Change</h1>
-              <div className="img-1">
-                <Image src={msgimg} alt="" />
+        {Active && (
+          <div className="tp-1-dropdown">
+            <div className="tester flex flex-col tp-1 w-[760px] h-[275px] bg-normaltask text-white  justify-between rounded-[32px] mt-10 items-start">
+              <div className=" flex flex-row items-start justify-around w-full mt-5">
+                <h1 className="text-[20px] font-normal"> Design Change</h1>
+                <div className="img-1">
+                  <Image src={msgimg} alt="" />
+                </div>
+                <div className="img-2">
+                  <Image src={linkimg} alt="" />
+                </div>
+                <div className="img-3">
+                  <Image src={galleryimg} alt="" />
+                </div>
+                <div className="img-4 cursor-pointer" onClick={handleDropdown}>
+                  <Image src={DDUPIMG} alt="" />
+                </div>
               </div>
-              <div className="img-2">
-                <Image src={linkimg} alt="" />
+              <div className="flex items-center w-full justify-center mb-5">
+                <Button className="button-test text-black bg-inputrr font--poppins text-[20px] font-regular p-8 rounded-[34px] text-center  hover:bg-redesigntask">
+                  <Link href="https://github.com/users/rutdvaj/projects/9">
+                    Track Progress
+                  </Link>
+                </Button>
               </div>
-              <div className="img-3">
-                <Image src={galleryimg} alt="" />
-              </div>
-              <div className="img-4">
-                <Image src={ddimg} alt="" />
-              </div>
-            </div>
-            <div className="flex items-center w-full justify-center mb-5">
-              <Button className="button-test text-black bg-inputrr font--poppins text-[20px] font-regular p-8 rounded-[34px] text-center  hover:bg-redesigntask">
-                <Link href="https://github.com/users/rutdvaj/projects/7/views/1">
-                  Track Progress
-                </Link>
-              </Button>
             </div>
           </div>
-        </div>
+        )}
         <div className="tp-1 w-[760px] h-[75px] bg-normaltask text-white flex justify-around rounded-[32px] mt-20 items-center ">
           <h1 className="text-[20px] font-normal"> Database Changes </h1>
           <div className="img-1">
