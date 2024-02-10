@@ -29,7 +29,6 @@ export function AlertDialogDemo() {
           content: comment,
           timestamp: Date.now(),
         });
-        // Clear the comment textarea after adding the comment
         setComment("");
       } catch (error) {
         console.error("Error adding comment:", error);
@@ -45,24 +44,26 @@ export function AlertDialogDemo() {
           <Image src={msgimg} alt="" />
         </div>
       </AlertDialogTrigger>
-      <div className="alert-test bg-darkmode outline-none border-none">
-        <AlertDialogContent className="bg-verydark">
-          <AlertDialogHeader>
-            <AlertDialogTitle className="text-white">
-              Got Something to share? Type Here
-            </AlertDialogTitle>
-            <TextareaDemo
-              value={comment}
-              onChange={(e: any) => setComment(e.target.value)}
-            />
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleContinue}>
-              Continue
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
+      <div className="filler">
+        <div className="alert-test bg-darkmode outline-none border-none">
+          <AlertDialogContent className="bg-verydark">
+            <AlertDialogHeader>
+              <AlertDialogTitle className="text-white">
+                Got Something to share? Type Here
+              </AlertDialogTitle>
+              <TextareaDemo
+                value={comment}
+                onChange={(e: any) => setComment(e.target.value)}
+              />
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction onClick={handleContinue}>
+                Continue
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </div>
       </div>
     </AlertDialog>
   );
